@@ -8,7 +8,7 @@ namespace Parkings.Garaget
         int position = -1;
         public GarageEnum(Vehicle[] list)
         {
-            vehicles=new Vehicle[list.Length];
+            vehicles=new Vehicle[list.Length+1];
             vehicles=list;
         }
 
