@@ -8,8 +8,8 @@ namespace Parkings.Garaget
         int position = -1;
         public GarageEnum(Vehicle[] list)
         {
-            vehicles=new Vehicle[list.Length+1];
-            vehicles=list;
+            vehicles = new Vehicle[list.Length + 1];
+            vehicles = list;
         }
 
         object IEnumerator.Current
@@ -20,25 +20,25 @@ namespace Parkings.Garaget
             }
         }
 
-    
-    public Vehicle Current
-    {
-        get
+
+        public Vehicle Current
         {
-            try
+            get
             {
-                return vehicles[position];
-            }
-            catch (IndexOutOfRangeException)
-            {
-                throw new InvalidOperationException();
+                try
+                {
+                    return vehicles[position];
+                }
+                catch (IndexOutOfRangeException)
+                {
+                    throw new InvalidOperationException();
+                }
             }
         }
-    }
         public bool MoveNext()
         {
             position++;
-            return (position <vehicles.Length);
+            return (position < vehicles.Length);
         }
 
         public void Reset()
